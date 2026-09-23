@@ -1,6 +1,5 @@
 # TP 2 — Observation des flux de réplication et analyse de la certification
 
-**Module associé :** [Module 2 — Internals de MySQL Group Replication](../modules/module-02-group-replication-internals.md)
 
 ## Exercice 1 — Suivre un cycle de transaction de bout en bout
 
