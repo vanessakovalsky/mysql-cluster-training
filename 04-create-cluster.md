@@ -20,8 +20,8 @@ dba.configure_instance();
 
 shell.connect('clusteradmin:ClusterAdmin2026!@10.42.0.124:3306');
 cluster = dba.create_cluster('trainingCluster');
-cluster.add_instance('clusteradmin:ClusterAdmin2026!@10.42.0.104:3306', {recoveryMethod: 'clone'});
-cluster.add_instance('clusteradmin:ClusterAdmin2026!@10.42.0.16:3306', {recoveryMethod: 'clone'});
+cluster.add_instance('clusteradmin:ClusterAdmin2026!@10.42.0.104:3306');
+cluster.add_instance('clusteradmin:ClusterAdmin2026!@10.42.0.16:3306'));
 ```
 > `configureInstance()` sans argument analyse l'instance courante et
 > **propose interactivement** les corrections nécessaires (variables GTID,
