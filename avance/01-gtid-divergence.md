@@ -1,6 +1,5 @@
 # TP 1 — Analyse de divergence GTID et validation d'une réintégration de nœud
 
-**Module associé :** [Module 1 — GTID avancé et cohérence des données](../modules/module-01-gtid-avance.md)
 
 **Prérequis :** cluster InnoDB opérationnel (3 nœuds).
 
