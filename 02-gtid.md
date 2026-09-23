@@ -1,6 +1,5 @@
 # TP 2 — Manipulation des GTID
 
-**Module associé :** [Module 2 — GUID & GTID](../modules/module-02-guid-gtid.md)
 
 **Prérequis :** environnement du Module 0 provisionné, connexion SSH sur
 `node1`, `node2`, `node3`. Ce TP se déroule **avant** la création du cluster
