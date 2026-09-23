@@ -62,6 +62,14 @@ PURGE BINARY LOGS BEFORE NOW();
 ```
 
 ### 2.2 — Retirer temporairement un membre puis tenter une recovery incrémentale
+* En python
+```python
+cluster = dba.get_cluster();
+cluster.remove_instance('clusteradmin:ClusterAdmin2026!@<IP_NODEX>:3306');
+// ... laisser le cluster tourner un moment, générer de l'activité ...
+cluster.add_instance('clusteradmin:ClusterAdmin2026!@<IP_NODEX>:3306');
+```
+* En JS
 ```javascript
 var cluster = dba.getCluster();
 cluster.removeInstance('clusteradmin:ClusterAdmin2026!@<IP_NODEX>:3306');
@@ -81,6 +89,12 @@ SELECT GTID_SUBSET('<gtid_purged_primary>', '<gtid_executed_nodeX>');
 > impossible ? Pourquoi ?
 
 ### 2.4 — Corriger par clone
+* En Python
+```python
+cluster.add_instance('clusteradmin:ClusterAdmin2026!@<IP_NODEX>:3306');
+cluster.status();
+```
+* En JS : 
 ```javascript
 cluster.addInstance('clusteradmin:ClusterAdmin2026!@<IP_NODEX>:3306',
   {recoveryMethod: 'clone'});
