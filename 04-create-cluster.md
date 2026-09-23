@@ -7,10 +7,21 @@ Depuis `router1` :
 ```bash
 mysqlsh
 ```
-```javascript
-\js
+```
 shell.connect('clusteradmin@10.42.0.11:3306');
-dba.configureInstance();
+dba.configure_instance();
+
+shell.connect('clusteradmin:ClusterAdmin2026!@10.42.0.16:3306');
+dba.configure_instance();
+
+shell.connect('clusteradmin:ClusterAdmin2026!@10.42.0.104:3306');
+dba.configure_instance();
+
+
+shell.connect('clusteradmin:ClusterAdmin2026!@10.42.0.124:3306');
+cluster = dba.create_cluster('trainingCluster');
+cluster.add_instance('clusteradmin:ClusterAdmin2026!@10.42.0.104:3306', {recoveryMethod: 'clone'});
+cluster.add_instance('clusteradmin:ClusterAdmin2026!@10.42.0.16:3306', {recoveryMethod: 'clone'});
 ```
 > `configureInstance()` sans argument analyse l'instance courante et
 > **propose interactivement** les corrections nécessaires (variables GTID,
