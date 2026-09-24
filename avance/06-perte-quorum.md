@@ -1,7 +1,5 @@
 # TP 6 — Perte de quorum, redémarrage complet et remise en cohérence
 
-**Module associé :** [Module 6 — Dépannage avancé](../modules/module-06-depannage-avance.md)
-
 ## Exercice 1 — Perte de quorum (2 membres sur 3 tombent)
 
 ### 1.1 — Provoquer l'incident
