@@ -1,7 +1,5 @@
 # TP 4 — Diagnostic complet via MySQL Shell et utilisation des commandes de recovery
 
-**Module associé :** [Module 4 — Exploitation avancée de MySQL Shell](../modules/module-04-mysql-shell-avance.md)
-
 ## Exercice 1 — rescan() après une intervention manuelle
 
 ### 1.1 — Créer un écart entre la réalité GR et la metadata AdminAPI
