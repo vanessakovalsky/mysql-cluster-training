@@ -3,11 +3,11 @@
 
 ## Exercice 1 — Suivre un cycle de transaction de bout en bout
 
-1. Ouvrez une session sur `performance_schema.replication_group_member_stats`
+1. Ouvrez une session sur le noeud 1 `performance_schema.replication_group_member_stats`
    via une boucle `watch` shell, rafraîchie
    toutes les secondes, sur le PRIMARY.
 ```
-watch -n 1 "mysql -u <utilisateur> -p'<mot_de_passe>' -h <ip_primary> -e 'SELECT * FROM performance_schema.replication_group_member_stats\G'"
+watch -n 1 'mysql -u <utilisateur> -p"<mot_de_passe>" -e "SELECT * FROM performance_schema.replication_group_member_stats\G"'
 ```
 2. Créer la structure de la base et de la table (dans un autre terminal):
 ```
