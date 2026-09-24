@@ -9,6 +9,17 @@
 ```
 watch -n 1 "mysql -u <utilisateur> -p'<mot_de_passe>' -h <ip_primary> -e 'SELECT * FROM performance_schema.replication_group_member_stats\G'"
 ```
+2. Créer la structure de la base et de la table (dans un autre terminal):
+```
+CREATE DATABASE IF NOT EXISTS tp_gtid;
+
+USE tp_gtid;
+
+CREATE TABLE IF NOT EXISTS compteur (
+    id INT PRIMARY KEY,
+    valeur INT
+);
+```
 3. Depuis un autre terminal, insérez une seule ligne :
    ```sql
    INSERT INTO tp_gtid.compteur VALUES (5000, 1);
