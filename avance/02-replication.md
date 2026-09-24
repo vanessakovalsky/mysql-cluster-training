@@ -4,13 +4,20 @@
 ## Exercice 1 — Suivre un cycle de transaction de bout en bout
 
 1. Ouvrez une session sur `performance_schema.replication_group_member_stats`
-   en mode `\watch` (MySQL Shell) ou via une boucle `watch` shell, rafraîchie
+   en mode `\watch` (MySQL Shell)
+```sql
+\watch --interval=1 SELECT * FROM performance_schema.replication_group_member_stats\G
+```
+    ou via une boucle `watch` shell, rafraîchie
    toutes les secondes, sur le PRIMARY.
-2. Depuis un autre terminal, insérez une seule ligne :
+```
+watch -n 1 "mysql -u <utilisateur> -p'<mot_de_passe>' -h <ip_primary> -e 'SELECT * FROM performance_schema.replication_group_member_stats\G'"
+```
+3. Depuis un autre terminal, insérez une seule ligne :
    ```sql
    INSERT INTO tp_gtid.compteur VALUES (5000, 1);
    ```
-3. Observez l'évolution de `COUNT_TRANSACTIONS_CHECKED` avant/après.
+4. Observez l'évolution de `COUNT_TRANSACTIONS_CHECKED` avant/après.
 
 > **Question :** de combien ce compteur augmente-t-il pour une seule
 > transaction applicative ? Est-ce cohérent avec le nombre de membres du
