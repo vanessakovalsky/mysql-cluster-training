@@ -4,11 +4,7 @@
 ## Exercice 1 — Suivre un cycle de transaction de bout en bout
 
 1. Ouvrez une session sur `performance_schema.replication_group_member_stats`
-   en mode `\watch` (MySQL Shell)
-```sql
-\watch --interval=1 SELECT * FROM performance_schema.replication_group_member_stats\G
-```
-    ou via une boucle `watch` shell, rafraîchie
+   via une boucle `watch` shell, rafraîchie
    toutes les secondes, sur le PRIMARY.
 ```
 watch -n 1 "mysql -u <utilisateur> -p'<mot_de_passe>' -h <ip_primary> -e 'SELECT * FROM performance_schema.replication_group_member_stats\G'"
