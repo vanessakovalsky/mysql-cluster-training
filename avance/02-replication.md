@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS compteur (
 3. Sur les deux nœuds :
    ```sql
    SELECT COUNT_TRANSACTIONS_CHECKED, COUNT_CONFLICTS_DETECTED,
-          COUNT_TRANSACTIONS_ROLLBACK
+          COUNT_TRANSACTIONS_LOCAL_ROLLBACK
    FROM performance_schema.replication_group_member_stats
    WHERE MEMBER_ID = @@server_uuid;
    ```
