@@ -1,10 +1,11 @@
 # TP 3 — Simulation de charge et analyse du throttling
 
 ## Exercice 1 — Mesure de référence
-
+* Lancer le meme watch que le TP2
+* Puis insérer des données
 ```bash
 time (for i in $(seq 1 3000); do
-  mysql -h<IP_NODE1> -uclusteradmin -p'ClusterAdmin2026!' \
+  mysql -uclusteradmin -p'ClusterAdmin2026!' \
     -e "INSERT INTO tp_gtid.compteur VALUES ($((2000+i)), $i);" 2>/dev/null
 done)
 ```
