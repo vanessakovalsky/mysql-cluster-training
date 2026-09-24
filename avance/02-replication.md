@@ -58,11 +58,18 @@ problème réseau intermittent avec le donneur.
 
 1. Retirez un membre : `cluster.removeInstance(...)`.
 2. Sur ce membre, avant de le réintégrer, limitez artificiellement la bande
-   passante réseau vers les autres nœuds (ex. `tc` Linux, ou simplement
-   coupez temporairement le port 33061 dans le Security Group AWS pendant
-   quelques secondes après avoir lancé `addInstance`).
-3. Relancez `cluster.addInstance(..., {recoveryMethod: 'incremental'})`.
-4. Pendant l'opération, sur le nœud candidat :
+   passante réseau vers les autres nœuds
+   Trouve le nom de ton interface réseau (ex: eth0, ens33, enp0s3) :
+   ```
+   ip a
+   ```
+   Pour brider le trafic sortant de l'interface (ex: eth0) à 100 kbit/s (très lent, idéal pour observer les files d'attente/lag) :
+   ```
+   sudo tc qdisc add dev eth0 root tbf rate 100kbit burst 32kbit latency 400ms
+   ```
+   
+4. Relancez `cluster.addInstance(..., {recoveryMethod: 'incremental'})`.
+5. Pendant l'opération, sur le nœud candidat :
    ```sql
    SELECT channel_name, service_state
    FROM performance_schema.replication_connection_status
