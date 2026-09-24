@@ -1,7 +1,5 @@
 # TP 9 — Analyse d'une architecture ClusterSet
 
-**Module associé :** [Module 9 — Architecture de MySQL InnoDB ClusterSet](../modules/module-09-clusterset-architecture.md)
-
 ## Partie 1 — Mise en place (si pas déjà fait dans une session précédente)
 
 ```javascript
