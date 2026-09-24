@@ -1,7 +1,5 @@
 # TP 5 — Diagnostic d'un nœud en erreur et analyse croisée métriques/logs
 
-**Module associé :** [Module 5 — Supervision et diagnostic avancé](../modules/module-05-supervision-diagnostic.md)
-
 ## Exercice — Isolement réseau d'un membre et diagnostic complet
 
 ### 1. Provoquer l'incident (isolement réseau, pas arrêt du service)
